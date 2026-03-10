@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timothy - Sponsor</title>
+<meta name="description" content="Support Timothy's open source work">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0c0f14;
+  --bg-2: #12161e;
+  --bg-3: #181d28;
+  --border: rgba(255,255,255,0.06);
+  --border-2: rgba(255,255,255,0.1);
+  --text: #e4e4e8;
+  --text-2: #9096a4;
+  --text-3: #5c6270;
+  --gold: #e2b96f;
+  --gold-dim: rgba(226, 185, 111, 0.08);
+  --gold-glow: rgba(226, 185, 111, 0.15);
+  --wechat: #07c160;
+  --alipay: #1677ff;
+  --paypal: #0070ba;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', 'Noto Sans SC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle grid pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page { position: relative; z-index: 1; }
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Lang */
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 200;
+  display: flex;
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  border-radius: 6px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font: 12px/1 'Outfit', sans-serif;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.lang-switch button.active {
+  background: var(--gold-dim);
+  color: var(--gold);
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center;
+  padding: 100px 0 48px;
+  position: relative;
+}
+
+/* Warm glow behind hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.hero > * { position: relative; }
+
+.hero-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(226,185,111,0.25);
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 62px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, var(--text) 30%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--text-2);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.hero-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hero-links a {
+  font-size: 14px;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: all 0.3s;
+  padding: 10px 28px;
+  border: 1px solid var(--border-2);
+  border-radius: 8px;
+  background: var(--bg-2);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.hero-links a:hover {
+  color: var(--gold);
+  border-color: rgba(226,185,111,0.3);
+  background: var(--gold-dim);
+}
+
+/* ─── SUPPORT SECTION ─── */
+.support {
+  padding: 56px 0 64px;
+}
+
+.support-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.support-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.support-header p {
+  font-size: 15px;
+  color: var(--text-2);
+  font-weight: 300;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.support-header p em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.pay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.pay-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.pay-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.pay-card.wechat::before { background: radial-gradient(circle at 50% 100%, rgba(7,193,96,0.06) 0%, transparent 70%); }
+.pay-card.alipay::before { background: radial-gradient(circle at 50% 100%, rgba(22,119,255,0.06) 0%, transparent 70%); }
+.pay-card.paypal::before { background: radial-gradient(circle at 50% 100%, rgba(0,112,186,0.06) 0%, transparent 70%); }
+
+.pay-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.pay-card:hover::before { opacity: 1; }
+
+.pay-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.pay-icon.wechat { background: rgba(7,193,96,0.1); }
+.pay-icon.alipay { background: rgba(22,119,255,0.1); }
+.pay-icon.paypal { background: rgba(0,112,186,0.1); }
+
+.pay-icon svg { width: 20px; height: 20px; }
+
+.pay-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.pay-card img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.pay-hint {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+/* PayPal special */
+.paypal-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paypal);
+  color: #fff;
+  font: 500 14px/1 'Outfit', sans-serif;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 24px 0 10px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.paypal-btn:hover {
+  background: #0085d6;
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0,112,186,0.3);
+}
+
+.paypal-btn svg { width: 18px; height: 18px; }
+
+/* ─── DIVIDER ─── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 80px;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.divider-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* ─── PROJECTS ─── */
+.projects-sec {
+  padding: 56px 0;
+}
+
+.projects-sec .sec-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.sec-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.proj-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+}
+
+.proj-item:hover {
+  border-color: var(--border-2);
+  background: var(--bg-3);
+}
+
+.proj-item:hover .proj-name { color: var(--gold); }
+
+.proj-emoji {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.proj-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.proj-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proj-name {
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.proj-star {
+  font-size: 11px;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.proj-desc {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  padding: 40px 0 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.footer a {
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover { color: var(--gold); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 680px) {
+  .hero { padding: 70px 0 40px; }
+  .hero h1 { font-size: 42px; }
+  .pay-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .divider { padding: 0 20px; }
+  .lang-switch { top: 12px; right: 12px; }
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge { animation: rise 0.7s ease both; }
+.hero h1 { animation: rise 0.7s ease 0.1s both; }
+.hero-sub { animation: rise 0.7s ease 0.2s both; }
+.hero-links { animation: rise 0.7s ease 0.3s both; }
+
+.proj-item { animation: rise 0.5s ease both; }
+.proj-item:nth-child(1) { animation-delay: 0.35s; }
+.proj-item:nth-child(2) { animation-delay: 0.4s; }
+.proj-item:nth-child(3) { animation-delay: 0.45s; }
+.proj-item:nth-child(4) { animation-delay: 0.5s; }
+
+.pay-card { animation: rise 0.6s ease both; }
+.pay-card:nth-child(1) { animation-delay: 0.55s; }
+.pay-card:nth-child(2) { animation-delay: 0.65s; }
+.pay-card:nth-child(3) { animation-delay: 0.75s; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="lang-switch">
+  <button class="active" onclick="switchLang('zh')">中文</button>
+  <button onclick="switchLang('en')">EN</button>
+</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge" data-zh="开源开发者" data-en="Open Source Developer">开源开发者</div>
+    <h1><span>Timothy.</span></h1>
+    <p class="hero-sub" data-zh="独立开发者 · 用代码创造价值" data-en="Independent Developer · Creating Value with Code">独立开发者 · 用代码创造价值</p>
+    <nav class="hero-links">
+      <a href="https://github.com/lifedever" target="_blank">GitHub</a>
+      <a href="#projects" data-zh="项目" data-en="Projects">项目</a>
+      <a href="#support" data-zh="支持我" data-en="Support">支持我</a>
+    </nav>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-sec" id="projects">
+    <div class="sec-head">
+      <span class="sec-label" data-zh="开源项目" data-en="Open Source">开源项目</span>
+      <span class="sec-line"></span>
+    </div>
+    <div class="proj-grid">
+      <a class="proj-item" href="https://github.com/lifedever/health-tick-release" target="_blank">
+        <span class="proj-emoji">🏃</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">HealthTick</span>
+            <span class="proj-star">&#9733; 10</span>
+          </div>
+          <div class="proj-desc" data-zh="macOS 久坐提醒 · 强制休息 · 习惯养成" data-en="macOS sedentary reminder · forced breaks · habit building">macOS 久坐提醒 · 强制休息 · 习惯养成</div>
+        </div>
+      </a>
+      <a class="proj-item" href="https://github.com/lifedever/smart-cleaner" target="_blank">
+        <span class="proj-emoji">🧹</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">Smart Cleaner</span>
+            <span class="proj-star">&#9733; 14</span>
+          </div>
+          <div class="proj-desc" data-zh="指定目录垃圾清理，安全移至回收站" data-en="Directory cleanup, safely moves junk to Trash">指定目录垃圾清理，安全移至回收站</div>
+        </div>
+      </a>
+      <a class="proj-item" href="https://github.com/lifedever/CronPilot" target="_blank">
+        <span class="proj-emoji">🕐</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">CronPilot</span>
+            <span class="proj-star">&#9733; 6</span>
+          </div>
+          <div class="proj-desc" data-zh="本地 Crontab 可视化管理桌面应用" data-en="Visual crontab management desktop app">本地 Crontab 可视化管理桌面应用</div>
+        </div>
+      </a>
+      <a class="proj-item" href="https://github.com/lifedever/ai-commit" target="_blank">
+        <span class="proj-emoji">🤖</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">ai-commit</span>
+            <span class="proj-star">&#9733; 2</span>
+          </div>
+          <div class="proj-desc" data-zh="AI 驱动的 Git Commit 消息生成器" data-en="AI-powered Git commit message generator">AI 驱动的 Git Commit 消息生成器</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"><span class="divider-dot"></span></div>
+
+  <!-- SUPPORT -->
+  <section class="support" id="support">
+    <div class="support-header">
+      <h2 data-zh="请我喝杯咖啡" data-en="Buy Me a Coffee">请我喝杯咖啡</h2>
+      <p data-zh="利用业余时间维护开源项目，你的支持是我持续创作的动力。<br><em>感谢每一份鼓励。</em>" data-en="I maintain open source projects in my spare time. Your support keeps me going.<br><em>Thank you.</em>">利用业余时间维护开源项目，你的支持是我持续创作的动力。<br><em>感谢每一份鼓励。</em></p>
+    </div>
+    <div class="pay-grid">
+      <!-- WeChat -->
+      <div class="pay-card wechat">
+        <div class="pay-icon wechat">
+          <svg viewBox="0 0 1024 1024" fill="#07c160"><path d="M1024 619.52c0-143.36-138.24-256-307.2-256s-307.2 112.64-307.2 256 138.24 256 307.2 256c30.72 0 61.44-5.12 92.16-10.24l97.28 51.2-25.6-76.8c87.04-51.2 143.36-128 143.36-220.16z m-414.72-40.96c-30.72 0-51.2-20.48-51.2-51.2s20.48-51.2 51.2-51.2 51.2 20.48 51.2 51.2c0 25.6-25.6 51.2-51.2 51.2z m209.92 0c-30.72 0-51.2-20.48-51.2-51.2s20.48-51.2 51.2-51.2 51.2 20.48 51.2 51.2c0 25.6-25.6 51.2-51.2 51.2z" /><path d="M358.4 609.28c0-158.72 153.6-286.72 348.16-286.72h15.36c-40.96-133.12-179.2-235.52-353.28-235.52-204.8 0-368.64 138.24-368.64 307.2 0 107.52 66.56 204.8 168.96 256l-30.72 92.16L256 686.08c35.84 10.24 71.68 15.36 112.64 15.36h10.24c-15.36-30.72-20.48-61.44-20.48-92.16z m138.24-414.72c35.84 0 66.56 30.72 66.56 66.56s-30.72 66.56-66.56 66.56C460.8 322.56 430.08 291.84 430.08 256S460.8 194.56 496.64 194.56zM245.76 322.56c-35.84 0-61.44-30.72-61.44-66.56s30.72-66.56 66.56-66.56 61.44 30.72 61.44 66.56-30.72 66.56-66.56 66.56z" /></svg>
+        </div>
+        <div class="pay-name" data-zh="微信支付" data-en="WeChat Pay">微信支付</div>
+        <img src="images/wechat-pay.jpeg" alt="WeChat Pay QR">
+        <div class="pay-hint" data-zh="打开微信扫一扫" data-en="Scan with WeChat">打开微信扫一扫</div>
+      </div>
+      <!-- Alipay -->
+      <div class="pay-card alipay">
+        <div class="pay-icon alipay">
+          <svg viewBox="0 0 1024 1024" fill="#1677ff"><path d="M1024.0512 701.0304V196.864A196.9664 196.9664 0 0 0 827.136 0H196.864A196.9664 196.9664 0 0 0 0 196.864v630.272A196.9152 196.9152 0 0 0 196.864 1024h630.272a197.12 197.12 0 0 0 193.8432-162.0992c-52.224-22.6304-278.528-120.32-396.4416-176.64-89.7024 108.6976-183.7056 173.9264-325.3248 173.9264s-236.1856-87.2448-224.8192-194.048c7.4752-70.0416 55.552-184.576 264.2944-164.9664 110.08 10.3424 160.4096 30.8736 250.1632 60.5184 23.1936-42.5984 42.496-89.4464 57.1392-139.264H248.064v-39.424h196.9152V311.1424H204.8V267.776h240.128V165.632s2.1504-15.9744 19.8144-15.9744h98.4576V267.776h256v43.4176h-256V381.952h208.8448a805.9904 805.9904 0 0 1-84.8384 212.6848c60.672 22.016 336.7936 106.3936 336.7936 106.3936zM283.5456 791.6032c-149.6576 0-173.312-94.464-165.376-133.9392 7.8336-39.3216 51.2-90.624 134.4-90.624 95.5904 0 181.248 24.4736 284.0576 74.5472-72.192 94.0032-160.9216 150.016-253.0816 150.016z"/></svg>
+        </div>
+        <div class="pay-name" data-zh="支付宝" data-en="Alipay">支付宝</div>
+        <img src="images/alipay.jpeg" alt="Alipay QR">
+        <div class="pay-hint" data-zh="打开支付宝扫一扫" data-en="Scan with Alipay">打开支付宝扫一扫</div>
+      </div>
+      <!-- PayPal -->
+      <div class="pay-card paypal">
+        <div class="pay-icon paypal">
+          <svg viewBox="0 0 1024 1024"><path d="M841.813333 253.269333c-0.938667 5.888-2.005333 11.946667-3.2 18.176-40.576 209.749333-179.498667 282.24-356.864 282.24H391.424a43.946667 43.946667 0 0 0-43.349333 37.376l-46.250667 295.210667-13.098667 83.626667a23.338667 23.338667 0 0 0 22.784 26.88h160.213334a38.613333 38.613333 0 0 0 38.058666-32.682667l1.578667-8.192 30.165333-192.64 1.962667-10.538667a38.613333 38.613333 0 0 1 38.058667-32.768h23.936c155.221333 0 276.736-63.445333 312.234666-246.954666 14.848-76.672 7.168-140.714667-32.085333-185.728a153.301333 153.301333 0 0 0-43.861333-34.005334z" fill="#179BD7"/><path d="M799.317333 236.202667a318.464 318.464 0 0 0-39.509333-8.789334 498.474667 498.474667 0 0 0-79.616-5.845333h-241.28a38.528 38.528 0 0 0-38.058667 32.768L349.525333 581.546667l-1.450666 9.514666a43.946667 43.946667 0 0 1 43.349333-37.376h90.325333c177.365333 0 316.288-72.533333 356.864-282.24 1.237333-6.229333 2.261333-12.288 3.157334-18.176a215.68 215.68 0 0 0-42.453334-17.066666z" fill="#222D65"/><path d="M400.853333 254.293333a38.442667 38.442667 0 0 1 38.058667-32.725333h241.28c28.586667 0 55.296 1.877333 79.616 5.845333 16.512 2.602667 32.768 6.528 48.64 11.690667 11.946667 3.968 23.082667 8.704 33.365333 14.165333 12.074667-77.525333-0.085333-130.304-41.770666-178.133333C754.133333 22.528 671.274667 0 565.248 0H257.365333c-21.632 0-40.106667 15.872-43.477333 37.418667L85.674667 855.466667a26.752 26.752 0 0 0 5.973333 21.461333c5.034667 5.888 12.373333 9.301333 20.096 9.344h190.08l47.701333-304.725333 51.328-327.253334z" fill="#253B80"/></svg>
+        </div>
+        <div class="pay-name">PayPal</div>
+        <a class="paypal-btn" href="https://paypal.me/lifedever" target="_blank">
+          <svg viewBox="0 0 1024 1024" style="width:18px;height:18px"><path d="M841.813333 253.269333c-0.938667 5.888-2.005333 11.946667-3.2 18.176-40.576 209.749333-179.498667 282.24-356.864 282.24H391.424a43.946667 43.946667 0 0 0-43.349333 37.376l-46.250667 295.210667-13.098667 83.626667a23.338667 23.338667 0 0 0 22.784 26.88h160.213334a38.613333 38.613333 0 0 0 38.058666-32.682667l1.578667-8.192 30.165333-192.64 1.962667-10.538667a38.613333 38.613333 0 0 1 38.058667-32.768h23.936c155.221333 0 276.736-63.445333 312.234666-246.954666 14.848-76.672 7.168-140.714667-32.085333-185.728a153.301333 153.301333 0 0 0-43.861333-34.005334z" fill="white"/><path d="M799.317333 236.202667a318.464 318.464 0 0 0-39.509333-8.789334 498.474667 498.474667 0 0 0-79.616-5.845333h-241.28a38.528 38.528 0 0 0-38.058667 32.768L349.525333 581.546667l-1.450666 9.514666a43.946667 43.946667 0 0 1 43.349333-37.376h90.325333c177.365333 0 316.288-72.533333 356.864-282.24 1.237333-6.229333 2.261333-12.288 3.157334-18.176a215.68 215.68 0 0 0-42.453334-17.066666z" fill="rgba(255,255,255,0.7)"/><path d="M400.853333 254.293333a38.442667 38.442667 0 0 1 38.058667-32.725333h241.28c28.586667 0 55.296 1.877333 79.616 5.845333 16.512 2.602667 32.768 6.528 48.64 11.690667 11.946667 3.968 23.082667 8.704 33.365333 14.165333 12.074667-77.525333-0.085333-130.304-41.770666-178.133333C754.133333 22.528 671.274667 0 565.248 0H257.365333c-21.632 0-40.106667 15.872-43.477333 37.418667L85.674667 855.466667a26.752 26.752 0 0 0 5.973333 21.461333c5.034667 5.888 12.373333 9.301333 20.096 9.344h190.08l47.701333-304.725333 51.328-327.253334z" fill="rgba(255,255,255,0.85)"/></svg>
+          <span data-zh="通过 PayPal 赞助" data-en="Sponsor via PayPal">通过 PayPal 赞助</span>
+        </a>
+        <div class="pay-hint" data-zh="支持国际支付" data-en="International payments">支持国际支付</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Timothy &middot; <a href="https://github.com/lifedever" target="_blank">github.com/lifedever</a></p>
+  </footer>
+
+</div>
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-switch button').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim() === (lang === 'zh' ? '中文' : 'EN'))
+  );
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-zh][data-en]').forEach(el =>
+    el.innerHTML = el.getAttribute('data-' + lang)
+  );
+  localStorage.setItem('lang', lang);
+}
+
+const saved = localStorage.getItem('lang');
+if (saved) {
+  switchLang(saved);
+} else {
+  const browserLang = navigator.language || navigator.userLanguage || '';
+  switchLang(browserLang.startsWith('zh') ? 'zh' : 'en');
+}
+
+// Live star counts
+const repos = ['health-tick-release','smart-cleaner','CronPilot','ai-commit'];
+const items = document.querySelectorAll('.proj-item');
+repos.forEach((r, i) => {
+  fetch('https://api.github.com/repos/lifedever/' + r)
+    .then(res => res.json())
+    .then(d => {
+      if (d.stargazers_count !== undefined && items[i])
+        items[i].querySelector('.proj-star').innerHTML = '&#9733; ' + d.stargazers_count;
+    }).catch(() => {});
+});
+</script>
+
+</body>
+</html>
