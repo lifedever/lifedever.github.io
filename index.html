@@ -483,6 +483,7 @@ body::before {
 .proj-item:nth-child(2) { animation-delay: 0.4s; }
 .proj-item:nth-child(3) { animation-delay: 0.45s; }
 .proj-item:nth-child(4) { animation-delay: 0.5s; }
+.proj-item:nth-child(5) { animation-delay: 0.55s; }
 
 .pay-card { animation: rise 0.6s ease both; }
 .pay-card:nth-child(1) { animation-delay: 0.55s; }
@@ -547,6 +548,16 @@ body::before {
             <span class="proj-star">&#9733; 6</span>
           </div>
           <div class="proj-desc" data-zh="本地 Crontab 可视化管理桌面应用" data-en="Visual crontab management desktop app">本地 Crontab 可视化管理桌面应用</div>
+        </div>
+      </a>
+      <a class="proj-item" href="https://github.com/lifedever/TaskTick" target="_blank">
+        <span class="proj-emoji">⏰</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">TaskTick</span>
+            <span class="proj-star">&#9733; 0</span>
+          </div>
+          <div class="proj-desc" data-zh="macOS 原生定时任务管理应用" data-en="Native macOS scheduled task manager">macOS 原生定时任务管理应用</div>
         </div>
       </a>
       <a class="proj-item" href="https://github.com/lifedever/ai-commit" target="_blank">
@@ -636,7 +647,7 @@ if (saved) {
 }
 
 // Live star counts
-const repos = ['health-tick-release','smart-cleaner','CronPilot','ai-commit'];
+const repos = ['health-tick-release','smart-cleaner','CronPilot','TaskTick','ai-commit'];
 const items = document.querySelectorAll('.proj-item');
 repos.forEach((r, i) => {
   fetch('https://api.github.com/repos/lifedever/' + r)
