@@ -23,9 +23,29 @@
   --gold: #e2b96f;
   --gold-dim: rgba(226, 185, 111, 0.08);
   --gold-glow: rgba(226, 185, 111, 0.15);
+  --shadow: rgba(0,0,0,0.3);
+  --grid-line: rgba(255,255,255,0.012);
   --wechat: #07c160;
   --alipay: #1677ff;
   --paypal: #0070ba;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f5f5f0;
+    --bg-2: #ffffff;
+    --bg-3: #eeeee8;
+    --border: rgba(0,0,0,0.06);
+    --border-2: rgba(0,0,0,0.12);
+    --text: #1a1a1a;
+    --text-2: #5c5c5c;
+    --text-3: #8c8c8c;
+    --gold: #b8860b;
+    --gold-dim: rgba(184, 134, 11, 0.08);
+    --gold-glow: rgba(184, 134, 11, 0.12);
+    --shadow: rgba(0,0,0,0.08);
+    --grid-line: rgba(0,0,0,0.025);
+  }
 }
 
 html { scroll-behavior: smooth; }
@@ -45,8 +65,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
@@ -119,7 +139,7 @@ body::before {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold);
-  border: 1px solid rgba(226,185,111,0.25);
+  border: 1px solid var(--gold-glow);
   padding: 5px 16px;
   border-radius: 20px;
   margin-bottom: 28px;
@@ -137,6 +157,7 @@ body::before {
 .hero h1 span {
   background: linear-gradient(135deg, var(--text) 30%, var(--gold) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -168,7 +189,7 @@ body::before {
 
 .hero-links a:hover {
   color: var(--gold);
-  border-color: rgba(226,185,111,0.3);
+  border-color: var(--gold-glow);
   background: var(--gold-dim);
 }
 
@@ -235,7 +256,7 @@ body::before {
 .pay-card:hover {
   transform: translateY(-4px);
   border-color: var(--border-2);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 40px var(--shadow);
 }
 
 .pay-card:hover::before { opacity: 1; }
@@ -274,6 +295,31 @@ body::before {
 .pay-hint {
   font-size: 11px;
   color: var(--text-3);
+}
+
+/* Sponsor note */
+.sponsor-note {
+  text-align: center;
+  margin-top: 36px;
+  padding: 20px 24px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-glow);
+  border-radius: 12px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sponsor-note p {
+  margin: 0;
+  color: var(--gold);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.sponsor-note a {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 /* PayPal special */
@@ -503,7 +549,7 @@ body::before {
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge" data-zh="开源开发者" data-en="Open Source Developer">开源开发者</div>
+    <div class="hero-badge" data-zh="独立开发者" data-en="Independent Developer">独立开发者</div>
     <h1><span>Lifedever.</span></h1>
     <p class="hero-sub" data-zh="独立开发者 · 用代码创造价值" data-en="Independent Developer · Creating Value with Code">独立开发者 · 用代码创造价值</p>
     <nav class="hero-links">
@@ -617,8 +663,8 @@ body::before {
         <div class="pay-hint" data-zh="支持 Visa / MasterCard / 银联" data-en="Visa / MasterCard / UnionPay supported">支持 Visa / MasterCard / 银联</div>
       </div>
     </div>
-    <div class="sponsor-note" style="text-align:center;margin-top:36px;padding:20px 24px;background:rgba(226,185,111,0.06);border:1px solid rgba(226,185,111,0.15);border-radius:12px;max-width:480px;margin-left:auto;margin-right:auto;">
-      <p style="margin:0;color:#e2b96f;font-size:15px;line-height:1.7;" data-zh="赞助后欢迎到 <a href='https://github.com/lifedever/sponsor/issues/1' target='_blank' style='color:#e2b96f;text-decoration:underline;'>留言板</a> 留下你的足迹 ✨" data-en="After sponsoring, feel free to leave your mark on the <a href='https://github.com/lifedever/sponsor/issues/1' target='_blank' style='color:#e2b96f;text-decoration:underline;'>Sponsor Wall</a> ✨">赞助后欢迎到 <a href="https://github.com/lifedever/sponsor/issues/1" target="_blank" style="color:#e2b96f;text-decoration:underline;">留言板</a> 留下你的足迹 ✨</p>
+    <div class="sponsor-note">
+      <p data-zh="赞助后欢迎到 <a href='https://github.com/lifedever/sponsor/issues/1' target='_blank'>留言板</a> 留下你的足迹 ✨" data-en="After sponsoring, feel free to leave your mark on the <a href='https://github.com/lifedever/sponsor/issues/1' target='_blank'>Sponsor Wall</a> ✨">赞助后欢迎到 <a href="https://github.com/lifedever/sponsor/issues/1" target="_blank">留言板</a> 留下你的足迹 ✨</p>
     </div>
   </section>
 
