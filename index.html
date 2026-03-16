@@ -322,6 +322,92 @@ body::before {
   text-decoration: underline;
 }
 
+/* ─── SPONSORS WALL ─── */
+.sponsors-wall {
+  padding: 56px 0 20px;
+}
+
+.sponsors-wall .sec-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.sponsors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.sponsor-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: rise 0.5s ease both;
+}
+
+.sponsor-person:nth-child(1) { animation-delay: 0.3s; }
+.sponsor-person:nth-child(2) { animation-delay: 0.4s; }
+.sponsor-person:nth-child(3) { animation-delay: 0.5s; }
+.sponsor-person:nth-child(4) { animation-delay: 0.6s; }
+
+.sponsor-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold-glow));
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gold);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.sponsor-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-dim);
+  transition: all 0.3s;
+}
+
+.sponsor-person:hover .sponsor-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 0 24px var(--gold-glow);
+}
+
+.sponsor-person:hover .sponsor-avatar::after {
+  border-color: var(--gold);
+  inset: -6px;
+}
+
+.sponsor-person-name {
+  font-size: 13px;
+  color: var(--text-2);
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.sponsor-person:hover .sponsor-person-name {
+  color: var(--gold);
+}
+
+.sponsors-note {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
 /* PayPal special */
 .paypal-btn {
   position: relative;
@@ -666,6 +752,35 @@ body::before {
     <div class="sponsor-note">
       <p data-zh="赞助后欢迎到 <a href='https://github.com/lifedever/sponsor/issues/1' target='_blank'>留言板</a> 留下你的足迹 ✨" data-en="After sponsoring, feel free to leave your mark on the <a href='https://github.com/lifedever/sponsor/issues/1' target='_blank'>Sponsor Wall</a> ✨">赞助后欢迎到 <a href="https://github.com/lifedever/sponsor/issues/1" target="_blank">留言板</a> 留下你的足迹 ✨</p>
     </div>
+  </section>
+
+  <div class="divider"><span class="divider-dot"></span></div>
+
+  <!-- SPONSORS WALL -->
+  <section class="sponsors-wall">
+    <div class="sec-head">
+      <span class="sec-label" data-zh="赞助者荣誉墙" data-en="Sponsors Honor Wall">赞助者荣誉墙</span>
+      <span class="sec-line"></span>
+    </div>
+    <div class="sponsors-list">
+      <div class="sponsor-person">
+        <div class="sponsor-avatar">咫</div>
+        <span class="sponsor-person-name">咫尺冰</span>
+      </div>
+      <div class="sponsor-person">
+        <div class="sponsor-avatar">B</div>
+        <span class="sponsor-person-name">B*e</span>
+      </div>
+      <div class="sponsor-person">
+        <div class="sponsor-avatar">K</div>
+        <span class="sponsor-person-name">Kevin</span>
+      </div>
+      <div class="sponsor-person">
+        <div class="sponsor-avatar">冰</div>
+        <span class="sponsor-person-name">冰点</span>
+      </div>
+    </div>
+    <p class="sponsors-note" data-zh="排名不分先后 · 感谢每一位支持者" data-en="Listed in no particular order · Thank you all">排名不分先后 · 感谢每一位支持者</p>
   </section>
 
   <footer class="footer">
