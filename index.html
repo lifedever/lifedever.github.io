@@ -1068,7 +1068,7 @@ html.light .theme-icon-sun { display: block; }
   <div class="divider"><span class="divider-dot"></span></div>
 
   <!-- OPEN SOURCE -->
-  <section class="projects-sec">
+  <section class="projects-sec" id="opensource">
     <div class="sec-head">
       <span class="sec-label" data-zh="开源项目" data-en="Open Source" data-ja="オープンソース" data-ko="오픈소스">开源项目</span>
     </div>
@@ -1297,7 +1297,7 @@ document.addEventListener('click', e => {
 
 // Live star counts with localStorage cache
 const repos = ['claude-rules','TaskTick','health-tick-release','smart-cleaner','CronPilot','ai-commit'];
-const items = document.querySelectorAll('.projects-sec:last-of-type .proj-item');
+const items = document.querySelectorAll('#opensource .proj-item');
 const starCache = JSON.parse(localStorage.getItem('starCache') || '{}');
 
 // Apply cached values first
