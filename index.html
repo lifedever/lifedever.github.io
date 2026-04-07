@@ -1133,6 +1133,16 @@ html.light .theme-icon-sun { display: block; }
           <div class="proj-desc" data-zh="AI 驱动的 Git Commit 消息生成器" data-en="AI-powered Git commit message generator" data-ja="AI 駆動の Git コミットメッセージ生成ツール" data-ko="AI 기반 Git 커밋 메시지 생성기">AI 驱动的 Git Commit 消息生成器</div>
         </div>
       </a>
+      <a class="proj-item" href="https://github.com/lifedever/claudecode-debug-mode" target="_blank">
+        <span class="proj-emoji">🐛</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">claudecode-debug-mode</span>
+            <span class="proj-star">&#9733; 4</span>
+          </div>
+          <div class="proj-desc" data-zh="Claude Code 运行时调试技能 · 插入日志探针 · 定位修复 Bug" data-en="Runtime debugging skill for Claude Code — insert log probes, locate and fix bugs" data-ja="Claude Code ランタイムデバッグスキル · ログプローブ挿入 · バグ修正" data-ko="Claude Code 런타임 디버깅 스킬 · 로그 프로브 삽입 · 버그 수정">Claude Code 运行时调试技能 · 插入日志探针 · 定位修复 Bug</div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -1355,7 +1365,7 @@ document.addEventListener('click', e => {
 });
 
 // Live star counts with localStorage cache
-const repos = ['claude-rules','TaskTick','health-tick-release','smart-cleaner','CronPilot','ai-commit'];
+const repos = ['claude-rules','TaskTick','health-tick-release','smart-cleaner','CronPilot','ai-commit','claudecode-debug-mode'];
 const items = document.querySelectorAll('#opensource .proj-item');
 const starCache = JSON.parse(localStorage.getItem('starCache') || '{}');
 
