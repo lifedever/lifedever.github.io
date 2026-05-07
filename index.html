@@ -671,6 +671,164 @@ html.light .theme-icon-sun { display: block; }
   font-weight: 300;
 }
 
+/* ─── WECHAT PROMO ─── */
+.wechat-promo {
+  padding: 56px 0;
+}
+
+.wechat-promo-card {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 32px 36px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  animation: rise 0.6s ease 0.15s both;
+}
+
+.wechat-promo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 100%, rgba(7, 193, 96, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 0%, var(--gold-glow) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.wechat-promo-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--wechat), var(--gold), transparent);
+}
+
+.wechat-promo-card > * { position: relative; }
+
+.wechat-promo-info { flex: 1; min-width: 0; }
+
+.wechat-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--wechat);
+  background: rgba(7, 193, 96, 0.08);
+  border: 1px solid rgba(7, 193, 96, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.wechat-promo-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.wechat-promo-title {
+  font-family: 'Cormorant Garamond', 'Noto Sans SC', serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+.wechat-promo-name {
+  background: linear-gradient(135deg, var(--gold), #d4a055);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.wechat-promo-desc {
+  font-size: 14.5px;
+  color: var(--text-2);
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.wechat-promo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wechat-promo-tags span {
+  font-size: 11.5px;
+  color: var(--text-3);
+  background: var(--bg-3);
+  padding: 4px 11px;
+  border-radius: 8px;
+}
+
+.wechat-promo-qr {
+  flex-shrink: 0;
+  width: 172px;
+  text-align: center;
+}
+
+.wechat-promo-qr-frame {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(7, 193, 96, 0.15);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.wechat-promo-qr-frame:hover {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+.wechat-promo-qr-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.wechat-promo-qr-hint {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wechat-promo-qr-hint svg {
+  width: 12px;
+  height: 12px;
+  fill: var(--wechat);
+}
+
+@media (max-width: 680px) {
+  .wechat-promo-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 22px;
+    gap: 24px;
+  }
+  .wechat-promo-tags {
+    justify-content: center;
+  }
+  .wechat-promo-qr {
+    width: 160px;
+  }
+  .wechat-promo-title {
+    font-size: 24px;
+  }
+}
+
 /* ─── DIVIDER ─── */
 .divider {
   display: flex;
@@ -1893,6 +2051,14 @@ html.light .theme-icon-sun { display: block; }
         <span class="sponsor-person-name">APP喵</span>
       </div>
       <div class="sponsor-person">
+        <div class="sponsor-avatar"><img src="https://cdn.jsdelivr.net/gh/lifedever/images@master/it/2026/05/20260507-231756.jpg" alt="三黄工作室"></div>
+        <span class="media-tag">
+          <svg viewBox="0 0 24 24"><path d="M8.691 2C4.768 2 1.5 4.582 1.5 7.828c0 1.758.96 3.349 2.513 4.454-.21.762-.533 1.95-.546 2.015-.017.083-.042.186-.042.266 0 .146.106.266.267.266.063 0 .113-.023.177-.063l1.895-1.094c.712.21 1.467.336 2.253.336.18 0 .359-.013.534-.026-.11-.38-.174-.78-.174-1.19 0-3.038 2.943-5.493 6.574-5.493.22 0 .435.018.647.04C14.565 4.15 11.92 2 8.691 2zm-3.33 3.516c.46 0 .831.37.831.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm5.326 0c.46 0 .83.37.83.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm3.955 2.69c-3.223 0-5.848 2.188-5.848 4.883 0 2.696 2.625 4.883 5.848 4.883.673 0 1.318-.1 1.922-.28l1.644.897a.206.206 0 0 0 .145.05c.135 0 .242-.107.242-.242 0-.06-.025-.12-.038-.18-.01-.046-.275-.997-.448-1.634 1.303-.937 2.133-2.258 2.133-3.734 0-2.615-2.448-4.643-5.6-4.643zm-1.928 2.094c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693zm4.015 0c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693z"/></svg>
+          公众号
+        </span>
+        <span class="sponsor-person-name">三黄工作室</span>
+      </div>
+      <div class="sponsor-person">
         <div class="sponsor-avatar">i</div>
         <span class="sponsor-person-name">*i</span>
       </div>
@@ -1912,6 +2078,37 @@ html.light .theme-icon-sun { display: block; }
       </div>
     </div>
     <p class="sponsors-note" data-zh="排名不分先后 · 感谢每一位支持者" data-en="Listed in no particular order · Thank you all" data-ja="順不同 · すべての支援者に感謝" data-ko="순서 무관 · 모든 후원자에게 감사">排名不分先后 · 感谢每一位支持者</p>
+  </section>
+
+  <div class="divider"><span class="divider-dot"></span></div>
+
+  <!-- WECHAT OFFICIAL ACCOUNT PROMO -->
+  <section class="wechat-promo">
+    <div class="wechat-promo-card">
+      <div class="wechat-promo-info">
+        <div class="wechat-promo-badge">
+          <svg viewBox="0 0 24 24"><path d="M8.691 2C4.768 2 1.5 4.582 1.5 7.828c0 1.758.96 3.349 2.513 4.454-.21.762-.533 1.95-.546 2.015-.017.083-.042.186-.042.266 0 .146.106.266.267.266.063 0 .113-.023.177-.063l1.895-1.094c.712.21 1.467.336 2.253.336.18 0 .359-.013.534-.026-.11-.38-.174-.78-.174-1.19 0-3.038 2.943-5.493 6.574-5.493.22 0 .435.018.647.04C14.565 4.15 11.92 2 8.691 2zm-3.33 3.516c.46 0 .831.37.831.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm5.326 0c.46 0 .83.37.83.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm3.955 2.69c-3.223 0-5.848 2.188-5.848 4.883 0 2.696 2.625 4.883 5.848 4.883.673 0 1.318-.1 1.922-.28l1.644.897a.206.206 0 0 0 .145.05c.135 0 .242-.107.242-.242 0-.06-.025-.12-.038-.18-.01-.046-.275-.997-.448-1.634 1.303-.937 2.133-2.258 2.133-3.734 0-2.615-2.448-4.643-5.6-4.643zm-1.928 2.094c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693zm4.015 0c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693z"/></svg>
+          <span data-zh="微信公众号" data-en="WeChat Account" data-ja="WeChat 公式アカウント" data-ko="WeChat 공식 계정">微信公众号</span>
+        </div>
+        <h3 class="wechat-promo-title" data-zh="关注 <span class='wechat-promo-name'>简数志</span>" data-en="Follow <span class='wechat-promo-name'>简数志</span>" data-ja="<span class='wechat-promo-name'>简数志</span> をフォロー" data-ko="<span class='wechat-promo-name'>简数志</span> 팔로우">关注 <span class="wechat-promo-name">简数志</span></h3>
+        <p class="wechat-promo-desc" data-zh="独立开发的真实记录 · 工具与思考的随手分享 · 第一时间获取新版本动态与最新资讯" data-en="Real notes from indie development · tools & thoughts shared on the fly · early product updates and latest news" data-ja="インディー開発の生の記録 · ツールと考察の気軽な共有 · 新バージョン情報と最新ニュースをいち早く" data-ko="인디 개발의 진짜 기록 · 도구와 생각을 자유롭게 공유 · 새 버전 소식과 최신 뉴스를 가장 먼저">独立开发的真实记录 · 工具与思考的随手分享 · 第一时间获取新版本动态与最新资讯</p>
+        <div class="wechat-promo-tags">
+          <span data-zh="开发笔记" data-en="Dev Notes" data-ja="開発ノート" data-ko="개발 노트">开发笔记</span>
+          <span data-zh="工具推荐" data-en="Tool Picks" data-ja="ツール紹介" data-ko="도구 추천">工具推荐</span>
+          <span data-zh="新版抢先看" data-en="Early Access" data-ja="先行リリース" data-ko="얼리 액세스">新版抢先看</span>
+          <span data-zh="最新资讯" data-en="Latest Updates" data-ja="最新情報" data-ko="최신 소식">最新资讯</span>
+        </div>
+      </div>
+      <div class="wechat-promo-qr">
+        <div class="wechat-promo-qr-frame">
+          <img src="images/jianshuzhi-qrcode.jpg" alt="简数志公众号二维码">
+        </div>
+        <div class="wechat-promo-qr-hint">
+          <svg viewBox="0 0 24 24"><path d="M8.691 2C4.768 2 1.5 4.582 1.5 7.828c0 1.758.96 3.349 2.513 4.454-.21.762-.533 1.95-.546 2.015-.017.083-.042.186-.042.266 0 .146.106.266.267.266.063 0 .113-.023.177-.063l1.895-1.094c.712.21 1.467.336 2.253.336.18 0 .359-.013.534-.026-.11-.38-.174-.78-.174-1.19 0-3.038 2.943-5.493 6.574-5.493.22 0 .435.018.647.04C14.565 4.15 11.92 2 8.691 2zm-3.33 3.516c.46 0 .831.37.831.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm5.326 0c.46 0 .83.37.83.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm3.955 2.69c-3.223 0-5.848 2.188-5.848 4.883 0 2.696 2.625 4.883 5.848 4.883.673 0 1.318-.1 1.922-.28l1.644.897a.206.206 0 0 0 .145.05c.135 0 .242-.107.242-.242 0-.06-.025-.12-.038-.18-.01-.046-.275-.997-.448-1.634 1.303-.937 2.133-2.258 2.133-3.734 0-2.615-2.448-4.643-5.6-4.643zm-1.928 2.094c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693zm4.015 0c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693z"/></svg>
+          <span data-zh="微信扫码关注" data-en="Scan with WeChat" data-ja="WeChat でスキャン" data-ko="WeChat으로 스캔">微信扫码关注</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
