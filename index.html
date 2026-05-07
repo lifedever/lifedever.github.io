@@ -282,8 +282,9 @@ html.light .theme-icon-sun { display: block; }
 
 .hero-links {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .hero-links a {
@@ -1639,6 +1640,8 @@ html.light .theme-icon-sun { display: block; }
       <a href="https://github.com/lifedever" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
       <a href="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span data-zh="项目" data-en="Projects" data-ja="プロジェクト" data-ko="프로젝트">项目</span></a>
       <a href="#support"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span data-zh="支持我" data-en="Support" data-ja="サポート" data-ko="후원하기">支持我</span></a>
+      <a href="#sponsors-wall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg><span data-zh="荣誉墙" data-en="Sponsors" data-ja="スポンサー" data-ko="후원자">荣誉墙</span></a>
+      <a href="#wechat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2C4.768 2 1.5 4.582 1.5 7.828c0 1.758.96 3.349 2.513 4.454-.21.762-.533 1.95-.546 2.015-.017.083-.042.186-.042.266 0 .146.106.266.267.266.063 0 .113-.023.177-.063l1.895-1.094c.712.21 1.467.336 2.253.336.18 0 .359-.013.534-.026-.11-.38-.174-.78-.174-1.19 0-3.038 2.943-5.493 6.574-5.493.22 0 .435.018.647.04C14.565 4.15 11.92 2 8.691 2zm-3.33 3.516c.46 0 .831.37.831.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm5.326 0c.46 0 .83.37.83.83 0 .46-.37.832-.83.832-.46 0-.832-.372-.832-.832 0-.46.372-.83.832-.83zm3.955 2.69c-3.223 0-5.848 2.188-5.848 4.883 0 2.696 2.625 4.883 5.848 4.883.673 0 1.318-.1 1.922-.28l1.644.897a.206.206 0 0 0 .145.05c.135 0 .242-.107.242-.242 0-.06-.025-.12-.038-.18-.01-.046-.275-.997-.448-1.634 1.303-.937 2.133-2.258 2.133-3.734 0-2.615-2.448-4.643-5.6-4.643zm-1.928 2.094c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693zm4.015 0c.383 0 .693.31.693.693 0 .383-.31.693-.693.693-.383 0-.693-.31-.693-.693 0-.383.31-.693.693-.693z"/></svg><span data-zh="公众号" data-en="WeChat" data-ja="WeChat" data-ko="WeChat">公众号</span></a>
     </nav>
   </section>
 
@@ -1917,7 +1920,7 @@ html.light .theme-icon-sun { display: block; }
   <div class="divider"><span class="divider-dot"></span></div>
 
   <!-- SPONSORS WALL -->
-  <section class="sponsors-wall">
+  <section class="sponsors-wall" id="sponsors-wall">
     <div class="sec-head">
       <span class="sec-label" data-zh="赞助者荣誉墙" data-en="Sponsors Honor Wall" data-ja="スポンサー名誉壁" data-ko="후원자 명예의 벽">赞助者荣誉墙</span>
     </div>
@@ -2083,7 +2086,7 @@ html.light .theme-icon-sun { display: block; }
   <div class="divider"><span class="divider-dot"></span></div>
 
   <!-- WECHAT OFFICIAL ACCOUNT PROMO -->
-  <section class="wechat-promo">
+  <section class="wechat-promo" id="wechat">
     <div class="wechat-promo-card">
       <div class="wechat-promo-info">
         <div class="wechat-promo-badge">
