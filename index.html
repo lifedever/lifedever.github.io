@@ -1322,6 +1322,16 @@ html.light .theme-icon-sun { display: block; }
       <span class="sec-label" data-zh="开源项目" data-en="Open Source" data-ja="オープンソース" data-ko="오픈소스">开源项目</span>
     </div>
     <div class="proj-grid">
+      <a class="proj-item" href="https://www.lifedever.com/TabFlick/" target="_blank">
+        <span class="proj-emoji">🔀</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-name">TabFlick</span>
+            <span class="proj-star">&#9733; 0</span>
+          </div>
+          <div class="proj-desc" data-zh="Chrome 按最近使用顺序切换标签，带缩略图切换器" data-en="Most-recently-used tab switching for Chrome, with a thumbnail switcher" data-ja="Chrome の最近使用したタブ切り替え、サムネイル付きスイッチャー" data-ko="Chrome 최근 사용 순서 탭 전환, 썸네일 스위처 제공">Chrome 按最近使用顺序切换标签，带缩略图切换器</div>
+        </div>
+      </a>
       <a class="proj-item" href="https://www.lifedever.com/claude-rules/" target="_blank">
         <span class="proj-emoji">🤖</span>
         <div class="proj-body">
@@ -1729,7 +1739,9 @@ document.addEventListener('click', e => {
 });
 
 // Live star counts with localStorage cache
-const repos = ['claude-rules','TaskTick','health-tick-release','smart-cleaner','CronPilot','ai-commit','skills-plugin','file-lens'];
+// 顺序必须和 #opensource 里 .proj-item 的 DOM 顺序严格一致 —— 下面按索引配对。
+// 增删卡片或调整顺序时，这个数组要同步改，否则每张卡片会显示相邻项目的 star 数。
+const repos = ['TabFlick','claude-rules','TaskTick','health-tick-release','smart-cleaner','CronPilot','ai-commit','skills-plugin','file-lens'];
 const items = document.querySelectorAll('#opensource .proj-item');
 const starCache = JSON.parse(localStorage.getItem('starCache') || '{}');
 
